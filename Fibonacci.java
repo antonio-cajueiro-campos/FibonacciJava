@@ -6,8 +6,9 @@ public class Fibonacci {
 
 	public static void main(String[] args) {
 		String errorFormatMessage = "Caracter invalido, por favor preencha um numero limite para o fibonacci como parametro do programa.";
+		int fiboLimit;
 		try {
-			int fiboLimit = Integer.parseInt(args[0]);
+			fiboLimit = Integer.parseInt(args[0]);
 			fiboPrint(fiboLimit);
 		} catch (IndexOutOfBoundsException e) {
 			System.out.printf("Preencha um numero limite para o fibonacci: ");
@@ -15,8 +16,9 @@ public class Fibonacci {
 				Scanner scan = new Scanner(System.in);
 				try {
 					if (scan.hasNextInt()) {
-						fiboPrint(scan.nextInt());
+						fiboLimit = scan.nextInt();
 						scan.close();
+						fiboPrint(fiboLimit);
 					}
 					throw new NumberFormatException();
 	
